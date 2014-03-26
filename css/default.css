@@ -1,0 +1,10 @@
+#pattern {
+  background-image: url('http://www.fa-d.com/wp-content/themes/fa-design/library/media/images/pattern.png');
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /*background: fixed repeat center center;*/
+  opacity: 0.5;
+}
