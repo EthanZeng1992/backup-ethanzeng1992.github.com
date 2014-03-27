@@ -1,3 +1,7 @@
+body {
+  background-color: #191919;
+}
+
 #pattern {
   background-image: url('http://www.fa-d.com/wp-content/themes/fa-design/library/media/images/pattern.png');
   position: fixed;
