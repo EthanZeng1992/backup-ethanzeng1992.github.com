@@ -1,14 +1,42 @@
 body {
-  background-color: #191919;
+  margin: 0;
+  background: #414B52;
+  font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
-#pattern {
-  background-image: url('http://www.fa-d.com/wp-content/themes/fa-design/library/media/images/pattern.png');
-  position: fixed;
+#nav {
+  position: absolute;
   top: 0;
-  right: 0;
   left: 0;
-  bottom: 0;
-  /*background: fixed repeat center center;*/
-  opacity: 0.5;
+  width: 100%;
+  background-color: #333333;
+  height: 50px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+#nav-item {
+  padding-left: 20%;
+}
+
+#nav > ul {
+  list-style: none;
+}
+
+.nav-item-list {
+  float: left;
+  padding: 5px;
+  line-height: 10px;
+}
+
+
+.nav-item-list > a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 8px;
+}
+
+.nav-item-list > a:hover {
+  border-radius: 3px;
+  background: #444; 
 }
