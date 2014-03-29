@@ -1,42 +1,139 @@
 body {
   margin: 0;
-  background: #414B52;
+  background-color: #e2e2e2;
   font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
-#nav {
-  position: absolute;
-  top: 0;
-  left: 0;
+#container {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#header {
   width: 100%;
-  background-color: #333333;
-  height: 50px;
-  font-size: 15px;
-  margin-bottom: 30px;
+  background-color: #fff;
+}
+
+#site-title {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 7.6%;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#site-title > a:hover {
+  color: #1982d1;
+}
+
+#header-img {
+  margin: 0;
+}
+
+#nav {
+  background: linear-gradient(rgb(37, 37, 37), rgb(10, 10, 10)) repeat scroll 0% 0% transparent;
+  float: left;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
 }
 
 #nav-item {
-  padding-left: 20%;
-}
-
-#nav > ul {
-  list-style: none;
+  padding-bottom: 10px;
 }
 
 .nav-item-list {
   float: left;
-  padding: 5px;
-  line-height: 10px;
+  padding-left: 15px;
 }
 
-
 .nav-item-list > a {
-  color: white;
-  text-decoration: none;
-  padding: 14px 8px;
+  color: #B8B4B4;
 }
 
 .nav-item-list > a:hover {
-  border-radius: 3px;
-  background: #444; 
+  color: #fff;
+}
+
+#blog-container {
+  padding-top: 42px;
+}
+
+#blog-list {
+  margin: 0;
+  padding: 0;
+}
+
+.blog-item-head {
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.blog-info {
+  height: 80px;
+  background-color: #f7f7f7;
+}
+
+.blog-item-pencil {
+  width: 40px;
+  float: left;
+}
+
+.blog-item-author {
+  float: left;
+  padding-left: 30px;
+}
+
+.fa {
+  color: #666;
+}
+
+.author-link > a {
+  color: #759b22;
+  font-size: 100%;
+  padding-left: 22px;
+  line-height: 25px;
+}
+
+.clock-link > a {
+  color: #759b22;
+  font-size: 100%;
+  padding-left: 22px;
+  line-height: 25px;
+}
+
+.tag-link > a {
+  color: #759b22;
+  font-size: 100%;
+  padding-left: 28px;
+  line-height: 25px;
+}
+
+.comment-link > a {
+  color: #759b22;
+  font-size: 100%;
+  padding-left: 25px;
+  line-height: 25px;
+}
+
+.blog-item-clock {
+  float: left;
+  padding-left: 120px;
+}
+
+.blog-item-tags{
+  float: left;
+  padding-left: 120px;
+}
+
+.blog-item-comment{
+  float: left;
+  padding-left: 120px;
 }

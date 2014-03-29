@@ -3,20 +3,64 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="{{ site.url }}/css/default.css" />
-		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1'></script>    
-		<script type='text/javascript' src='js/infinite-rotator.js'></script>		
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<!--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1'></script>    -->
+		<!--<script type='text/javascript' src='js/infinite-rotator.js'></script>		-->
+    <!--<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />-->
     <title>Weizl Blog</title>
   </head>
   <body>
-    <div id="nav">
-      <ul id="nav-item">
-        <li class="nav-item-list"><a href="#">Home</a></li>
-        <li class="nav-item-list"><a href="#">Archive</a></li>
-        <li class="nav-item-list"><a href="#">Works</a></li>
-        <li class="nav-item-list"><a href="#">Resume</a></li>
-        <li class="nav-item-list"><a href="#">Contact</a></li>
-      </ul>
+    <div id="container">
+      <div id="header">
+        <h1 id="site-title"><a href="/">Weizl Blog</a></h1>
+      </div>
+      <div id="header-img">
+        <img src="/images/wheel.jpg" width=100% height="288"> 
+      </div>
+      <div id="nav">
+        <ul id="nav-item">
+          <li class="nav-item-list"><a href="#">Home</a></li>
+          <li class="nav-item-list"><a href="#">Archive</a></li>
+          <li class="nav-item-list"><a href="#">Works</a></li>
+          <li class="nav-item-list"><a href="#">Resume</a></li>
+          <li class="nav-item-list"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div id="blog-container">
+        <ul id="blog-list">
+          <li class="blog-info"> 
+            <div class="blog-item-head">
+              <div class="blog-item-pencil">
+                <i class="fa fa-file-text fa-2x"></i>
+              </div>
+              <div class="blog-item-author">
+                <i class="fa fa-user">&nbsp;&nbsp;Author</i>
+                <div class="author-link">
+                  <a href="/">WEIZL</a>
+                </div> 
+              </div>
+              <div class="blog-item-clock">
+                <i class="fa fa-clock-o">&nbsp;&nbsp;Posted on</i>
+                <div class="clock-link">
+                  <a href="/">2013-1-29</a>
+                </div> 
+              </div>
+              <div class="blog-item-tags">
+                <i class="fa fa-tags">&nbsp;&nbsp;Tags</i>
+                <div class="tag-link">
+                  <a href="/">vim</a>
+                </div> 
+              </div>
+              <div class="blog-item-comment">
+                <i class="fa fa-comment">&nbsp;&nbsp;Comment</i>
+                <div class="comment-link">
+                  <a href="/">Send comments</a>
+                </div> 
+              </div>
+            </div>
+          </li>
+        </ul>  
+      </div>
     </div>
   </body>
 </html>
