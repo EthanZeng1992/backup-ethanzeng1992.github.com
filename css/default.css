@@ -6,7 +6,7 @@ body {
 
 #container {
   background-color: #e2e2e2;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -85,13 +85,12 @@ ul {
 }
 
 .blog-item-pencil {
-  width: 40px;
   float: left;
 }
 
 .blog-item-author {
   float: left;
-  padding-left: 30px;
+  padding-left: 7%;
 }
 
 .fa {
