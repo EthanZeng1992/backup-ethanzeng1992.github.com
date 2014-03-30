@@ -5,7 +5,7 @@ body {
 }
 
 #container {
-  background-color: #fff;
+  background-color: #e2e2e2;
   width: 80%;
   margin: 0 auto;
 }
@@ -37,6 +37,8 @@ a {
 
 #nav {
   background: linear-gradient(rgb(37, 37, 37), rgb(10, 10, 10)) repeat scroll 0% 0% transparent;
+  background: -webkit-linear-gradient(rgb(37, 37, 37), rgb(10, 10, 10)) repeat scroll 0% 0% transparent;
+  background: -ms-linear-gradient(rgb(37, 37, 37), rgb(10, 10, 10)) repeat scroll 0% 0% transparent;
   float: left;
   width: 100%;
 }
@@ -64,6 +66,7 @@ ul {
 
 #blog-container {
   padding-top: 42px;
+  width: 70%;
 }
 
 #blog-list {
@@ -125,15 +128,15 @@ ul {
 
 .blog-item-clock {
   float: left;
-  padding-left: 120px;
+  padding-left: 8%;
 }
 
 .blog-item-tags{
   float: left;
-  padding-left: 120px;
+  padding-left: 8%;
 }
 
 .blog-item-comment{
   float: left;
-  padding-left: 120px;
+  padding-left: 8%;
 }
