@@ -2,6 +2,8 @@
 layout: post
 title: Soft Delete In Rails
 keywords: soft delete ruby rails
+tags: soft delete
+description: some description some description some description some description
 ---
 <div class="article-content">
   <h3>Soft delete in rails</h3>
