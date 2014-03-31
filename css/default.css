@@ -1,18 +1,21 @@
 body {
   margin: 0;
   background-color: #e2e2e2;
+  background-image: url('http://heyiming.wordpress.com/wp-content/themes/pub/zoren/images/body.png?m=1375425529g');
   font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 #container {
   background-color: #e2e2e2;
-  width: 90%;
+  width: 78%;
+  max-width: 1000px;
   margin: 0 auto;
+  padding-bottom: 40px;
 }
 
 #header {
   width: 100%;
-  background-color: #fff;
+  background-color: #f8f8f8;
 }
 
 #site-title {
@@ -24,7 +27,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #759B22;
 }
 
 #site-title > a:hover {
@@ -75,13 +78,10 @@ ul {
 }
 
 .blog-item-head {
+  height: 50px;
   padding-top: 30px;
   padding-left: 30px;
-}
-
-.blog-info {
-  height: 80px;
-  background-color: #f7f7f7;
+  background-color: #F5F0F0;
 }
 
 .blog-item-pencil {
@@ -138,4 +138,38 @@ ul {
 .blog-item-comment{
   float: left;
   padding-left: 8%;
+}
+
+.blog-item-info {
+  background-color: #fff;
+}
+
+.blog-item-title {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 2;
+  padding: 20px 40px 0 40px;
+  font-family: 'Bitter', sans-serif;
+}
+
+.blog-item-title > a {
+  color: #242323;
+}
+
+.blog-item-description {
+  padding: 0 40px 20px 40px;
+  vertical-align: baseline;
+  color: rgb(65, 61, 61);
+  line-height: 1.6;
+}
+
+.blog-item-read {
+  padding: 0 40px 20px 40px;
+}
+
+.blog-item-divider {
+  width: 100%;
+  height: 20px;
+  background-color: #e2e2e2;
+  background-image: url('http://heyiming.wordpress.com/wp-content/themes/pub/zoren/images/body.png?m=1375425529g');
 }
