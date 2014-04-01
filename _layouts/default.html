@@ -21,7 +21,7 @@
         <h1 id="site-title"><a href="/">Weizl Blog</a></h1>
       </div>
       <div id="header-img">
-        <img src="/images/wheel.jpg" width=100% height="288"> 
+        <img src="/images/head.jpg" width=100% height="288"> 
       </div>
       <div id="nav">
         <ul id="nav-item">
@@ -34,24 +34,54 @@
       </div>
       {{ content }}
       <div id="aside">
-         <div id="blog-recent">
-           <div id="blog-recent-title">Recent Blogs</div>
-           <ul id="blog-recent-list">
-             <li><a href="#">Try Git</a></li>   
-             <li><a href="#">Try Git</a></li>   
-             <li><a href="#">Try Git</a></li>   
-             <li><a href="#">Try Git</a></li>   
-           </ul>
-         </div>
-         <div id="blog-category">
-           <div id="blog-recent-title">Recent Blogs</div>
-           <ul id="blog-recent-list">
-             <li><a href="#">Try Git</a></li>   
-             <li><a href="#">Try Git</a></li>   
-             <li><a href="#">Try Git</a></li>   
-             <li><a href="#">Try Git</a></li>   
-           </ul>
-         </div>
+        <div class="aside-item">
+          <div class="aside-item-title">Recent Blogs</div>
+          <ul class="aside-item-list">
+            {% for post in site.posts limit:5 %}
+            <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="aside-item">
+          <div class="aside-item-title">Likes</div>
+          <div class="aside-item-list aside-images-list">
+            <div class="likes-item">
+              <div class="likes-item-title">
+                <a href="http://www.fa-d.com/project/weatherflow?full=1#img887">FA Design</a>
+              </div>
+              <div class="likes-item-description">
+                <p>an independent design studio</p>
+              </div>
+              <div class="likes-item-image">
+                <a href="http://www.fa-d.com/project/weatherflow?full=1#img887"><img src="/images/fa-d.jpg" width="230px" height="250px"/></a>
+              </div>
+            </div>
+            <div class="likes-item">
+              <div class="likes-item-title">
+                <a href="http://5m3d.com/">5M3D</a>
+              </div>
+              <div class="likes-item-description">
+                <p>html5 & css3</p>
+              </div>
+              <div class="likes-item-image">
+                <a href="http://5m3d.com/"><img src="/images/5m3d.png" width="230px" height="250px"/></a>
+              </div>
+            </div>
+            <div class="likes-item">
+              <div class="likes-item-title">
+                <a href="http://www.zippergaleria.com.br/en/">Zipper</a>
+              </div>
+              <div class="likes-item-description">
+                <p>a cool site</p>
+              </div>
+              <div class="likes-item-image">
+                <a href="http://www.zippergaleria.com.br/en/"><img src="/images/zipper.jpg" width="230px" height="250px"/></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div id="footer">

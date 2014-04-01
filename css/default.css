@@ -10,7 +10,7 @@ body {
 #container {
   background-color: #e2e2e2;
   width: 90%;
-  max-width: 1000px;
+  max-width: 1070px;
   margin: 0 auto;
 }
 
@@ -182,7 +182,7 @@ ul {
   width: 25%;
 }
 
-#blog-recent-title {
+.aside-item-title {
   font-size: 20px;
   padding: 20px;
   font-weight: 700;
@@ -190,25 +190,46 @@ ul {
   background: #d0d0d0;
 }
 
-#blog-recent-list {
+.aside-item-list {
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 0;
   background-color: #fff;
 }
 
-#blog-recent-list > li {
+.aside-item-list > li {
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
 }
 
-#blog-recent-list > li > a {
+.aside-item-list > li > a {
   color: #666;
 }
 
-#blog-recent-list > li > a:hover {
+.aside-item-list > li > a:hover {
   color: #759B22;
 }
-#blog-category {
-  padding-top: 20px;
+
+.aside-images-list {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.likes-item-description {
+  border-left: 2px solid #EB6C6C;
+}
+
+.likes-item-description > p {
+  padding-left: 9px;
+  color: #666;
+}
+
+.likes-item-image {
+  padding-top: 3px;
+  padding-bottom: 10px;
+}
+
+.likes-item-title {
+  padding-bottom: 3px;
+  padding-top: 15px;
 }
