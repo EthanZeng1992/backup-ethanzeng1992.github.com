@@ -20,6 +20,14 @@ h3 {
   margin: 7px 0 7px 0;
 }
 
+.blog-padding-bottom {
+  padding-bottom: 30px;
+}
+
+.blog-margin-bottom {
+  margin-bottom: 40px;
+}
+
 /* code heighlight*/
 .prettyprint,
 pre.prettyprint {
@@ -74,6 +82,8 @@ pre {
   border-radius: 3px;
   background-size: auto 40px;
   background-color: #39382E;
+  font-family: monospace,"Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 13px;
 }
 
 pre > ol > li {
