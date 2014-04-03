@@ -28,6 +28,10 @@ h3 {
   margin-bottom: 40px;
 }
 
+.blog-item-content > p > span {
+  color: #759b22;
+}
+
 /* code heighlight*/
 .prettyprint,
 pre.prettyprint {
