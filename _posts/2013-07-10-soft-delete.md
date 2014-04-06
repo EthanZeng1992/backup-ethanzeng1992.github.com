@@ -3,7 +3,7 @@ layout: default
 title: Soft Delete In Rails
 keywords: soft,delete,ruby,rails
 tags: rails 
-description: some description some description some description some description
+description: Remove an item from client, but not from the database.
 ---
 <div class="article-container">
   <div class="blog-info blog-margin-bottom"> 
