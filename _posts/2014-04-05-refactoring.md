@@ -659,9 +659,199 @@ class TempRange
 end
 </pre>
 
+        <p>&nbsp;</p>
+        <p><span>Replace Parameter with Method: 以函数取代参数</span></p>
+        <p>description: 对象调用某个函数，并将所得结果作为参数，传递给另一个函数,而接受该参数的函数也可以调用前一个函数。可以让参数接受者去除该项参数，并直接调用前一个函数</p>
 
+<pre>
+def price
+  base_price = @quantity * @item_price
+  level_of_discount = 1
+  level_of_discount = 2 if @quantity > 100
+  discounted_price(base_price, level_of_discount)
+end
+def discounted_price(base_price, level_of_discount)
+  return base_price * 0.1 if level_of_discount == 2
+  base_price * 0.05
+end
 
+#refactoring code
+def price
+  return base_price * 0.1 if discount_level == 2
+  base_price * 0.05
+end
+def base_price
+  @quantity * @item_price
+end
+def discount_level
+  return 2 if @quantity > 100
+  return 1
+end
+</pre>
 
+        <p>&nbsp;</p>
+        <p><span>Introduce Parameter Object: 引入参数对象</span></p>
+        <p>description: 某些参数总是很自然地同时出现,以一个对象取代这些参数</p>
+
+<pre>
+class Account
+  def add_charge(base_price, tax_rate, imported)
+    total = base_price + base_price * tax_rate
+    total += base_price * 0.1 if imported
+    @charges << total
+  end
+  def total_charge
+    @charges.inject(0) { |total, charge| total + charge }
+  end
+end
+
+account.add_charge(5, 0.1, true)
+account.add_charge(12, 0.125, false)
+total = account.total_charge
+
+#refactoring step 1
+class Charge
+  attr_accessor :base_price, :tax_rate, :imported
+
+  def initialize(base_price, tax_rate, imported)
+    @base_price = base_price
+    @tax_rate = tax_rate
+    @imported = imported
+  end
+end
+class Account
+  def add_charge(tax_rate, imported, charge)
+    total = charge.base_price + charge.base_price * tax_rate
+    total += charge.base_price * 0.1 if imported
+    @charges << total
+  end
+  def total_charge
+    @charges.inject(0) { |total, charge| total + charge }
+  end
+end
+
+account.add_charge(0.1, true, Charge.new(9.0, nil, nil))
+account.add_charge(0.125, true, Charge.new(12.0, nil, nil))
+total = account.total_charge
+
+#refactoring step 2
+class Charge
+  attr_accessor :base_price, :tax_rate, :imported
+
+  def initialize(base_price, tax_rate, imported)
+    @base_price = base_price
+    @tax_rate = tax_rate
+    @imported = imported
+  end
+end
+class Account
+  def add_charge(charge)
+    total = charge.base_price + charge.base_price * charge.tax_rate
+    total += charge.base_price * 0.1 if charge.imported
+    @charges << total
+  end
+  def total_charge
+    @charges.inject(0) { |total, charge| total + charge }
+  end
+end
+
+account.add_charge(Charge.new(9.0, 0.1, true))
+account.add_charge(Charge.new(12.0, 0.125, true))
+total = account.total_charge
+
+#refactoring step 3
+class Account
+  def add_charge(charge)
+    @charges << charge
+  end
+  def total_charge
+    @charges.inject(0) do |total_for_account, charge|
+    total_for_account + charge.total
+  end
+end
+class Charge
+  def initialize(base_price, tax_rate, imported)
+    @base_price = base_price
+    @tax_rate = tax_rate
+    @imported = imported
+  end
+  def total
+    result = @base_price + @base_price * @tax_rate
+    result += @base_price * 0.1 if @imported
+    result
+  end
+end
+
+account.add_charge(Charge.new(9.0, 0.1, true).total)
+account.add_charge(Charge.new(12.0, 0.125, true).total)
+total = account.total_charge
+</pre>
+
+        <p>&nbsp;</p>
+        <p><span>Hide Method: 隐藏某个函数</span></p>
+        <p>description: 有一个函数，从来没有被其他任何class用到,可以将这个函数修改为private</p>
+
+        <p>&nbsp;</p>
+        <p><span>Replace Constructor with Factory Method: 以工厂函数取代构造函数</span></p>
+        <p>description: 希望在创建对象时不仅仅是对它做简单的构建动作,可以将constructor替换为factory method</p>
+
+<pre>
+class ProductController
+  def create
+    @product =
+      if imported
+        ImportedProduct.new(base_price)
+      else
+        if base_price > 1000
+          LuxuryProduct.new(base_price)
+        else
+          Product.new(base_price)
+        end
+      end
+  end
+end
+class Product
+  def initialize(base_price)
+    @base_price = base_price
+  end
+  def total_price
+    @base_price
+  end
+end
+class LuxuryProduct < Product
+  def total_price
+    super + 0.1 * super
+  end
+end
+class ImportedProduct < Product
+  def total_price
+    super + 0.25 * super
+  end
+end
+
+#refactoring code
+class ProductController
+  def create
+    @product = Product.create(base_price, imported)
+  end
+end
+class Product
+  def self.create(base_price, imported=false)
+    if imported
+      ImportedProduct.new(base_price)
+    else
+      if base_price > 1000
+        LuxuryProduct.new(base_price)
+      else
+        Product.new(base_price)
+    end
+  end
+end
+</pre>
+
+        <p>&nbsp;</p>
+        <p><span>Replace Error Code with Exception: 用异常取代错误码</span></p>
+        <p>description: 希望在创建对象时不仅仅是对它做简单的构建动作,可以将constructor替换为factory method</p>
       </div>
     </div>
   </div>
