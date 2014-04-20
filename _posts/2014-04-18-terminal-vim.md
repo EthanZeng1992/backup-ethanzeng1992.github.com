@@ -67,7 +67,7 @@ setw -g mode-keys vi
 # vim's defination of a horizontal/vertical split is revised from tumx's
 bind s split-window -h
 bind v split-window -v
-# move arount panes wiht hjkl, as one would in vim after C-w
+# move arount panes with hjkl, as one would in vim after C-w
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
@@ -143,7 +143,7 @@ endif
 <a href="http://rhnh.net/2011/08/20/vim-and-tmux-on-osx">http://rhnh.net/2011/08/20/vim-and-tmux-on-osx</a>
 <a href="https://geakit.com/lilydjwg/dotvim/commit/eeae45ffcb380b6a8d5643f8a3c052c61bbf694e">https://geakit.com/lilydjwg/dotvim/commit/eeae45ffcb380b6a8d5643f8a3c052c61bbf694e</a>
 </pre>
-
+        {% include disqus.html %}
       </div>
     </div>
   </div>

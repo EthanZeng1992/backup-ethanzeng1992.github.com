@@ -91,6 +91,7 @@ description: Remove an item from client, but not from the database.
 <pre>
     <a href="https://github.com/radar/paranoia">https://github.com/radar/paranoia</a>
 </pre>
+        {% include disqus.html %}
       </div>
     </div>
   </div>

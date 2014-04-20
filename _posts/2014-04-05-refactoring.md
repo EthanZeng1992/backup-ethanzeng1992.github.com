@@ -852,6 +852,8 @@ end
         <p>&nbsp;</p>
         <p><span>Replace Error Code with Exception: 用异常取代错误码</span></p>
         <p>description: 希望在创建对象时不仅仅是对它做简单的构建动作,可以将constructor替换为factory method</p>
+
+        {% include disqus.html %}
       </div>
     </div>
   </div>
