@@ -79,7 +79,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 set -g default-terminal "screen-256color"
 </pre>
 
-        <p><b>Step 4:</b> config neocomplcache work with "sudo vim"</p>
+<p><b>Step 4:</b> config neocomplcache work with "sudo vim"</p>
+
 <pre>
 # comment these line in: .vim/bundle/neocomplcache/plugin/neocomplcache.vim
 if v:version < 702  
