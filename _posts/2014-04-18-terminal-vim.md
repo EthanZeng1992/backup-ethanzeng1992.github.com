@@ -1,49 +1,12 @@
 ---
-layout: default 
+layout: post 
 title: Terminal & vim with solarized 
 keywords: tmux, oh-my-zsh, vim, solarized 
 tags: tmux vim
 description: tmux is a terminal multiplexer,Vim is a highly configurable text editor.
 ---
-<div class="article-container">
-  <div class="blog-info blog-margin-bottom"> 
-    <div class="blog-item-head">
-      <div class="blog-item-pencil">
-        <i class="fa fa-file-text fa-2x"></i>
-      </div>
-      <div class="blog-item-author">
-        <i class="fa fa-user">&nbsp;&nbsp;Author</i>
-        <div class="author-link">
-          <a href="/">WEIZL</a>
-        </div> 
-      </div>
-      <div class="blog-item-clock">
-        <i class="fa fa-clock-o">&nbsp;&nbsp;Posted on</i>
-        <div class="clock-link">
-          <a href="/">{{ page.date | date_to_utc | date: '%Y-%m-%d' }}</a>
-        </div> 
-      </div>
-      <div class="blog-item-tags">
-        <i class="fa fa-tags">&nbsp;&nbsp;Tags</i>
-        <div class="tag-link">
-          <a href="/">{{ page.tags }}</a>
-        </div> 
-      </div>
-      <div class="blog-item-comment">
-        <i class="fa fa-comment">&nbsp;&nbsp;Comment</i>
-        <div class="comment-link">
-          <a href="/">Send comments</a>
-        </div> 
-      </div>
-    </div>
-    <div class="blog-item-info blog-padding-bottom">
-      <div class="blog-item-title"><a href="{{ page.url }}">{{ page.title }}</a></div>
-      <div class="blog-item-description">
-        {{ page.description }}
-      </div>
-      <div class="blog-item-content">
-        <h3>Getting Started</h3>
-        <p><b>Step 1:</b> install oh-my-zsh</p>
+<h3>Getting Started</h3>
+<p><b>Step 1:</b> install oh-my-zsh</p>
 
 <pre>
 $ sudo apt-get install zsh 
@@ -53,7 +16,8 @@ $ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 $ chsh -s `which zsh`
 </pre>
 
-        <p><b>Step 2:</b> install and config tmux</p>
+<p><b>Step 2:</b> install and config tmux</p>
+
 <pre>
 $ sudo apt-get install tmux 
 $ vim .tmux.conf
@@ -86,7 +50,7 @@ bind + resize-pane -U 10
 bind : command-prompt
 </pre>
 
-        <p><b>Step 3:</b> setup terminal and vim color: solarized</p>
+<p><b>Step 3:</b> setup terminal and vim color: solarized</p>
 
 <pre>
 ## setup terminal dircolors 
@@ -135,7 +99,9 @@ if v:version < 702
   finish  
 endif  
 </pre>
-        <p>Reference:</p> 
+
+<p>Reference:</p> 
+
 <pre>
 <a href="http://blog.csdn.net/angle_birds/article/details/11694325">http://blog.csdn.net/angle_birds/article/details/11694325</a>
 <a href="http://happycasts.net/episodes/41">http://happycasts.net/episodes/41</a>
@@ -143,8 +109,3 @@ endif
 <a href="http://rhnh.net/2011/08/20/vim-and-tmux-on-osx">http://rhnh.net/2011/08/20/vim-and-tmux-on-osx</a>
 <a href="https://geakit.com/lilydjwg/dotvim/commit/eeae45ffcb380b6a8d5643f8a3c052c61bbf694e">https://geakit.com/lilydjwg/dotvim/commit/eeae45ffcb380b6a8d5643f8a3c052c61bbf694e</a>
 </pre>
-        {% include disqus.html %}
-      </div>
-    </div>
-  </div>
-</div>

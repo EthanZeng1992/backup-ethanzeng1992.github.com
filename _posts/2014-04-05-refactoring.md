@@ -1,95 +1,58 @@
 ---
-layout: default 
+layout: post 
 title: Refactoring Ruby Edition 
 keywords: refactoring 
 tags: ruby 
 description: To restructure software by applying a series of refactorings without changing its observable behavior.
 ---
-<div class="article-container">
-  <div class="blog-info blog-margin-bottom"> 
-    <div class="blog-item-head">
-      <div class="blog-item-pencil">
-        <i class="fa fa-file-text fa-2x"></i>
-      </div>
-      <div class="blog-item-author">
-        <i class="fa fa-user">&nbsp;&nbsp;Author</i>
-        <div class="author-link">
-          <a href="/">WEIZL</a>
-        </div> 
-      </div>
-      <div class="blog-item-clock">
-        <i class="fa fa-clock-o">&nbsp;&nbsp;Posted on</i>
-        <div class="clock-link">
-          <a href="/">{{ page.date | date_to_utc | date: '%Y-%m-%d' }}</a>
-        </div> 
-      </div>
-      <div class="blog-item-tags">
-        <i class="fa fa-tags">&nbsp;&nbsp;Tags</i>
-        <div class="tag-link">
-          <a href="/">{{ page.tags }}</a>
-        </div> 
-      </div>
-      <div class="blog-item-comment">
-        <i class="fa fa-comment">&nbsp;&nbsp;Comment</i>
-        <div class="comment-link">
-          <a href="/">Send comments</a>
-        </div> 
-      </div>
-    </div>
-    <div class="blog-item-info blog-padding-bottom">
-      <div class="blog-item-title"><a href="{{ page.url }}">{{ page.title }}</a></div>
-      <div class="blog-item-description">
-        {{ page.description }}
-      </div>
-      <div class="blog-item-content">
-        <h3>First step in Refactoring</h3>
-        <p>The first step is always the same: build a solid set of tests for that section of code.</p>
-        <p><span>Tip:</span> Refactoring changes the programs in small steps. If you make a mistake, it is easy to find the bug.</p>
-        <p><span>Tip:</span> Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
-        <h3>Code smells</h3>
-        <p><span>Duplicated Code: 重复的代码</span></p>
-        <p>Scene: 同一个class内的两个函数含有相同表达式</p>
-        <p>Refactor: 采用Extract Method方法提炼出重复的代码，让这两个地点调用被提炼出来的那一段代码</p>
-        <p>&nbsp;</p>
-        <p><span>Long Method: 过长函数</span></p>
-        <p>Scene: 感觉需要以注释来对函数说明点什么</p>
-        <p>Refactor: 把需要说明的东西写进一个独立函数中，并以其用途命名</p>
-        <p>&nbsp;</p>
-        <p><span>Large Class: 过大类</span></p>
-        <p>Scene: 想利用单一class做太多事情，其内往往就会出现太多instance变量</p>
-        <p>Refactor: 运用Extract Class将数个变量一起提炼至新class内</p>
-        <p>&nbsp;</p>
-        <p><span>Long Parameter List: 过长参数列</span></p>
-        <p>Scene: 太长的参数列难以理解，太多参数会造成前后不一致、不易使用</p>
-        <p>Refactor: 激活重构准则Replace Parameter with Method(以函数取代参数)</p>
-        <p>&nbsp;</p>
-        <p><span>Divergent Change: 发散式变化</span></p>
-        <p>Scene: A/B/C/D...多种功能变化的时候它都需要修改</p>
-        <p>Refactor: 某个类负担了多项任务，需要再拆分几个类出来，把变化封装得更细</p>
-        <p>&nbsp;</p>
-        <p><span>Shotgun Surgery: 散弹式修改</span></p>
-        <p>Scene: 完成某个需求的时候，A/B/C/D...多个类都需要修改</p>
-        <p>Refactor: 多个类之间的耦合太严重,Move Method和Move Field把所有需要修改的代码放进同一个class</p>
-        <p>&nbsp;</p>
-        <p><span>Feature Envy: 依恋情结</span></p>
-        <p>Scene: 函数从另一个对象调用几乎半打的函数</p>
-        <p>Refactor: 使用Move Method把它移到它该去的地方</p>
-        <p>&nbsp;</p>
-        <p><span>Switch Statements: switch惊悚现身</span></p>
-        <p>Scene: switch语句的问题在于重复</p>
-        <p>Refactor: 使用Extract Method将switch语句提炼到一个独立函数中，再将它搬移到需要多态性的class里</p>
-        <p>&nbsp;</p>
-        <p><span>Message Chains: 过度耦合的消息链</span></p>
-        <p>Scene: 用户向一个对象索求另一个对象，然后再向后者索求另一个对象，然后再索求另一个对象...</p>
-        <p>Refactor: 使用Hide Delegate或以Extract Method把使用该对象的代码提炼到一个独立函数中</p>
-        <p>&nbsp;</p>
-        <p><span>Inappropriate Intimacy: 狎昵关系</span></p>
-        <p>Scene: 两个classes过于亲密，花费太多时间去探究彼此的private成分</p>
-        <p>Refactor: 采用Move Method和Move Field帮它们划清界线</p>
-        <p>&nbsp;</p>
-        <h3>Composing Methods</h3>
-        <p><span>Extract Method: 提炼函数</span></p>
-        <p>description: 有一段代码可以被组织在一起并独立出来,放进一个函数中，并让函数名解释该函数用途</p>
+<h3>First step in Refactoring</h3>
+<p>The first step is always the same: build a solid set of tests for that section of code.</p>
+<p><span>Tip:</span> Refactoring changes the programs in small steps. If you make a mistake, it is easy to find the bug.</p>
+<p><span>Tip:</span> Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
+<h3>Code smells</h3>
+<p><span>Duplicated Code: 重复的代码</span></p>
+<p>Scene: 同一个class内的两个函数含有相同表达式</p>
+<p>Refactor: 采用Extract Method方法提炼出重复的代码，让这两个地点调用被提炼出来的那一段代码</p>
+<p>&nbsp;</p>
+<p><span>Long Method: 过长函数</span></p>
+<p>Scene: 感觉需要以注释来对函数说明点什么</p>
+<p>Refactor: 把需要说明的东西写进一个独立函数中，并以其用途命名</p>
+<p>&nbsp;</p>
+<p><span>Large Class: 过大类</span></p>
+<p>Scene: 想利用单一class做太多事情，其内往往就会出现太多instance变量</p>
+<p>Refactor: 运用Extract Class将数个变量一起提炼至新class内</p>
+<p>&nbsp;</p>
+<p><span>Long Parameter List: 过长参数列</span></p>
+<p>Scene: 太长的参数列难以理解，太多参数会造成前后不一致、不易使用</p>
+<p>Refactor: 激活重构准则Replace Parameter with Method(以函数取代参数)</p>
+<p>&nbsp;</p>
+<p><span>Divergent Change: 发散式变化</span></p>
+<p>Scene: A/B/C/D...多种功能变化的时候它都需要修改</p>
+<p>Refactor: 某个类负担了多项任务，需要再拆分几个类出来，把变化封装得更细</p>
+<p>&nbsp;</p>
+<p><span>Shotgun Surgery: 散弹式修改</span></p>
+<p>Scene: 完成某个需求的时候，A/B/C/D...多个类都需要修改</p>
+<p>Refactor: 多个类之间的耦合太严重,Move Method和Move Field把所有需要修改的代码放进同一个class</p>
+<p>&nbsp;</p>
+<p><span>Feature Envy: 依恋情结</span></p>
+<p>Scene: 函数从另一个对象调用几乎半打的函数</p>
+<p>Refactor: 使用Move Method把它移到它该去的地方</p>
+<p>&nbsp;</p>
+<p><span>Switch Statements: switch惊悚现身</span></p>
+<p>Scene: switch语句的问题在于重复</p>
+<p>Refactor: 使用Extract Method将switch语句提炼到一个独立函数中，再将它搬移到需要多态性的class里</p>
+<p>&nbsp;</p>
+<p><span>Message Chains: 过度耦合的消息链</span></p>
+<p>Scene: 用户向一个对象索求另一个对象，然后再向后者索求另一个对象，然后再索求另一个对象...</p>
+<p>Refactor: 使用Hide Delegate或以Extract Method把使用该对象的代码提炼到一个独立函数中</p>
+<p>&nbsp;</p>
+<p><span>Inappropriate Intimacy: 狎昵关系</span></p>
+<p>Scene: 两个classes过于亲密，花费太多时间去探究彼此的private成分</p>
+<p>Refactor: 采用Move Method和Move Field帮它们划清界线</p>
+<p>&nbsp;</p>
+<h3>Composing Methods</h3>
+<p><span>Extract Method: 提炼函数</span></p>
+<p>description: 有一段代码可以被组织在一起并独立出来,放进一个函数中，并让函数名解释该函数用途</p>
 
 <pre>
 def print_owing(amount)
@@ -109,10 +72,9 @@ def print_details(amount)
 end
 </pre>
 
-
-        <p>&nbsp;</p>
-        <p><span>Inline Method: 函数内联化</span></p>
-        <p>description: 函数本体与其名称同样清楚易懂,在函数调用点插入函数本体，然后移除该函数</p>
+<p>&nbsp;</p>
+<p><span>Inline Method: 函数内联化</span></p>
+<p>description: 函数本体与其名称同样清楚易懂,在函数调用点插入函数本体，然后移除该函数</p>
 
 <pre>
 def get_rating
@@ -128,9 +90,9 @@ def get_rating
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Inline Temp: 临时变量内联化</span></p>
-        <p>description: 临时变量只被简单表达式赋值一次，将所有对该变量的引用动作替换为表达式本身</p>
+<p>&nbsp;</p>
+<p><span>Inline Temp: 临时变量内联化</span></p>
+<p>description: 临时变量只被简单表达式赋值一次，将所有对该变量的引用动作替换为表达式本身</p>
 
 <pre>
 base_price = an_order.base_price
@@ -140,9 +102,9 @@ return (base_price > 1000)
 return (an_order.base_price > 1000)
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Temp with Query: 以查询取代临时变量</span></p>
-        <p>description: 程序以一个临时变量保存表达式的运算结果,将这个表达式提炼到一个独立函数中,临时变量的所有引用点替换为对新函数的调用</p>
+<p>&nbsp;</p>
+<p><span>Replace Temp with Query: 以查询取代临时变量</span></p>
+<p>description: 程序以一个临时变量保存表达式的运算结果,将这个表达式提炼到一个独立函数中,临时变量的所有引用点替换为对新函数的调用</p>
 
 <pre>
 base_price = @quantity * @item_price
@@ -163,9 +125,9 @@ def base_price
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Introduce Explaining Variable: 引入解释性变量</span></p>
-        <p>description: 有一个复杂的表达式,将该表达式(或其中一部分)的结果放进一个临时变量，以此变量名称来解释表达式用途</p>
+<p>&nbsp;</p>
+<p><span>Introduce Explaining Variable: 引入解释性变量</span></p>
+<p>description: 有一个复杂的表达式,将该表达式(或其中一部分)的结果放进一个临时变量，以此变量名称来解释表达式用途</p>
 
 <pre>
 if (platform.upcase.index("MAC") &&
@@ -185,9 +147,9 @@ if (is_mac_os && is_ie_browser && initialized? && was_resized)
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Split Temporary Variable: 剖解临时变量</span></p>
-        <p>description: 程序有个临时变量被赋值超过一次，它既不是循环变量，也不是一个集用临时变量</p>
+<p>&nbsp;</p>
+<p><span>Split Temporary Variable: 剖解临时变量</span></p>
+<p>description: 程序有个临时变量被赋值超过一次，它既不是循环变量，也不是一个集用临时变量</p>
 
 <pre>
 temp = 2 * (@height + @width)
@@ -202,9 +164,9 @@ area = @height * @width
 puts area
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Remove Assignments to Parameters: 移除对参数的赋值动作</span></p>
-        <p>description: 代码对一个参数进行赋值动作</p>
+<p>&nbsp;</p>
+<p><span>Remove Assignments to Parameters: 移除对参数的赋值动作</span></p>
+<p>description: 代码对一个参数进行赋值动作</p>
 
 <pre>
 def discount(input_val, quantity, year_to_date)
@@ -222,9 +184,9 @@ def discount(input_val, quantity, year_to_date)
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Method with Method Object: 以函数对象取代函数</span></p>
-        <p>description: 一个大型函数，其中对局部变量的使用，使你无法釆用 Extract Method,将这个函数放进一个单独对象中，如此一来局部变量就成了对象内的值域, 然后你可以在同一个对象中将这个大型函数分解为数个小型函数</p>
+<p>&nbsp;</p>
+<p><span>Replace Method with Method Object: 以函数对象取代函数</span></p>
+<p>description: 一个大型函数，其中对局部变量的使用，使你无法釆用 Extract Method,将这个函数放进一个单独对象中，如此一来局部变量就成了对象内的值域, 然后你可以在同一个对象中将这个大型函数分解为数个小型函数</p>
 
 <pre>
 class Order
@@ -237,30 +199,30 @@ class Order
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <h3>Moving Features Between Objects</h3>
-        <p><span>Move Method: 搬移函数</span></p>
-        <p>description: 程序中，有个函数与其所驻之外的另一个class进行更多交流,在该函数最常引用的class中建立一个有着类似行为的新函数,将旧函数变成一个单纯的委托函数，或是将旧函数完全移除</p>
-        <p>&nbsp;</p>
-        <p><span>Move Field: 搬移值域</span></p>
-        <p>description: 程序中,某个field被其所驻class之外的另一个class更多地用到,在target class 建立一个new field，修改source field的所有用户，令它们改用此new field</p>
-        <p>&nbsp;</p>
-        <p><span>Extract Class: 提炼类</span></p>
-        <p>description: 某个class做了应该由两个classes做的事,建立一个新class，将相关的值域和函数从旧class搬移到新class</p>
-        <p>&nbsp;</p>
-        <p><span>Inline Class: 将类内联化</span></p>
-        <p>description: 某个class没有做太多事情,将class的所有特性搬移到另一个class中，然后移除原class</p>
-        <p>&nbsp;</p>
-        <p><span>Hide Delegate: 隐藏委托关系</span></p>
-        <p>description: 客户直接调用其server object的delegate class,在server端建立客户所需的所有函数，用以隐藏委托关系</p>
-        <p>&nbsp;</p>
-        <p><span>Remove Middle Man: 移除中间人</span></p>
-        <p>description: 某个class做了过多的简单委托动作,让客户直接调用delegate</p>
+<p>&nbsp;</p>
+<h3>Moving Features Between Objects</h3>
+<p><span>Move Method: 搬移函数</span></p>
+<p>description: 程序中，有个函数与其所驻之外的另一个class进行更多交流,在该函数最常引用的class中建立一个有着类似行为的新函数,将旧函数变成一个单纯的委托函数，或是将旧函数完全移除</p>
+<p>&nbsp;</p>
+<p><span>Move Field: 搬移值域</span></p>
+<p>description: 程序中,某个field被其所驻class之外的另一个class更多地用到,在target class 建立一个new field，修改source field的所有用户，令它们改用此new field</p>
+<p>&nbsp;</p>
+<p><span>Extract Class: 提炼类</span></p>
+<p>description: 某个class做了应该由两个classes做的事,建立一个新class，将相关的值域和函数从旧class搬移到新class</p>
+<p>&nbsp;</p>
+<p><span>Inline Class: 将类内联化</span></p>
+<p>description: 某个class没有做太多事情,将class的所有特性搬移到另一个class中，然后移除原class</p>
+<p>&nbsp;</p>
+<p><span>Hide Delegate: 隐藏委托关系</span></p>
+<p>description: 客户直接调用其server object的delegate class,在server端建立客户所需的所有函数，用以隐藏委托关系</p>
+<p>&nbsp;</p>
+<p><span>Remove Middle Man: 移除中间人</span></p>
+<p>description: 某个class做了过多的简单委托动作,让客户直接调用delegate</p>
 
-        <p>&nbsp;</p>
-        <h3>Simplifying Conditional Expressions</h3>
-        <p><span>Decompose Conditional: 分解条件式</span></p>
-        <p>description: 从if、then、else 三个段落中分别提炼出独立函数</p>
+<p>&nbsp;</p>
+<h3>Simplifying Conditional Expressions</h3>
+<p><span>Decompose Conditional: 分解条件式</span></p>
+<p>description: 从if、then、else 三个段落中分别提炼出独立函数</p>
 
 <pre>
 if date < SUMMER_START || date > SUMMER_END
@@ -286,9 +248,9 @@ def summer_charge(quantity)
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Recompose Conditional</span></p>
-        <p>description: You have conditional code that is unnecessarily verbose and does not use the most readable Ruby construct.</p>
+<p>&nbsp;</p>
+<p><span>Recompose Conditional</span></p>
+<p>description: You have conditional code that is unnecessarily verbose and does not use the most readable Ruby construct.</p>
 
 <pre>
 parameters = params ? params : []
@@ -313,9 +275,9 @@ def reward_points
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Consolidate Conditional Expression: 合并条件式</span></p>
-        <p>description: 一系列条件测试，都得到相同结果,将这些测试合并为一个条件式，并将这个条件式提炼成为一个独立函数</p>
+<p>&nbsp;</p>
+<p><span>Consolidate Conditional Expression: 合并条件式</span></p>
+<p>description: 一系列条件测试，都得到相同结果,将这些测试合并为一个条件式，并将这个条件式提炼成为一个独立函数</p>
 
 <pre>
 def disability_amount
@@ -337,9 +299,9 @@ def ineligible_for_disability?
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Remove Control Flag: 移除控制标记</span></p>
-        <p>description: 一系列布尔表达式中，某个变量带有控制标记的作用,以break 语句或return 的语句取代控制标记</p>
+<p>&nbsp;</p>
+<p><span>Remove Control Flag: 移除控制标记</span></p>
+<p>description: 一系列布尔表达式中，某个变量带有控制标记的作用,以break 语句或return 的语句取代控制标记</p>
 
 <pre>
 #break
@@ -413,9 +375,9 @@ def found_miscreant(people)
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Nested Conditional with Guard Clauses: 以卫语句取代嵌套条件式</span></p>
-        <p>description: 函数中的条件逻辑使人难以看清正常的执行路径,使用卫语句(guard clauses)表现所有特殊情况</p>
+<p>&nbsp;</p>
+<p><span>Replace Nested Conditional with Guard Clauses: 以卫语句取代嵌套条件式</span></p>
+<p>description: 函数中的条件逻辑使人难以看清正常的执行路径,使用卫语句(guard clauses)表现所有特殊情况</p>
 
 <pre>
 def pay_amount
@@ -444,9 +406,9 @@ def pay_amount
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Conditional with Polymorphism: 以多态取代条件式</span></p>
-        <p>description: 有个条件式根据对象型别的不同而选择不同的行为,可以将这个条件式的每个分支放进一个subclass内的覆写函数中</p>
+<p>&nbsp;</p>
+<p><span>Replace Conditional with Polymorphism: 以多态取代条件式</span></p>
+<p>description: 有个条件式根据对象型别的不同而选择不同的行为,可以将这个条件式的每个分支放进一个subclass内的覆写函数中</p>
 
 <pre>
 module MountainBike...
@@ -508,9 +470,9 @@ module MountainBike...
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Introduce Null Object: 引入Null对象</span></p>
-        <p>description: 需要再三检查某物是否为null value时,可以将null value替换为null object</p>
+<p>&nbsp;</p>
+<p><span>Introduce Null Object: 引入Null对象</span></p>
+<p>description: 需要再三检查某物是否为null value时,可以将null value替换为null object</p>
 
 <pre>
 class Site
@@ -546,10 +508,10 @@ customer = site.customer
 customer_name = customer.name
 </pre>
 
-        <p>&nbsp;</p>
-        <h3>Making Method Calls Simpler</h3>
-        <p><span>Parameterize Method: 令函数携带参数</span></p>
-        <p>description: 若干函数做了类似的工作，但在函数本体中却包含了不同的值,可以建立单一函数，以参数表达那些不同的值</p>
+<p>&nbsp;</p>
+<h3>Making Method Calls Simpler</h3>
+<p><span>Parameterize Method: 令函数携带参数</span></p>
+<p>description: 若干函数做了类似的工作，但在函数本体中却包含了不同的值,可以建立单一函数，以参数表达那些不同的值</p>
 
 <pre>
 def base_charge
@@ -582,9 +544,9 @@ def usage_in_range(range)
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Parameter with Explicit Methods: 以明确函数取代参数</span></p>
-        <p>description: 有一个函数，其内完全取决于参数值而采取不同反应,可以针对该参数的每一个可能值，建立一个独立函数</p>
+<p>&nbsp;</p>
+<p><span>Replace Parameter with Explicit Methods: 以明确函数取代参数</span></p>
+<p>description: 有一个函数，其内完全取决于参数值而采取不同反应,可以针对该参数的每一个可能值，建立一个独立函数</p>
 
 <pre>
 class Employee
@@ -623,9 +585,9 @@ kent = Employee.create(Employee::ENGINEER)
 kent = Employee.create_engineer
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Preserve Whole Object: 保持对象完整</span></p>
-        <p>description: 从某个对象中取出若干值，将它们作为某一次函数调用时的参数,改为传递整个对象</p>
+<p>&nbsp;</p>
+<p><span>Preserve Whole Object: 保持对象完整</span></p>
+<p>description: 从某个对象中取出若干值，将它们作为某一次函数调用时的参数,改为传递整个对象</p>
 
 <pre>
 class Room
@@ -659,9 +621,9 @@ class TempRange
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Parameter with Method: 以函数取代参数</span></p>
-        <p>description: 对象调用某个函数，并将所得结果作为参数，传递给另一个函数,而接受该参数的函数也可以调用前一个函数。可以让参数接受者去除该项参数，并直接调用前一个函数</p>
+<p>&nbsp;</p>
+<p><span>Replace Parameter with Method: 以函数取代参数</span></p>
+<p>description: 对象调用某个函数，并将所得结果作为参数，传递给另一个函数,而接受该参数的函数也可以调用前一个函数。可以让参数接受者去除该项参数，并直接调用前一个函数</p>
 
 <pre>
 def price
@@ -689,9 +651,9 @@ def discount_level
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Introduce Parameter Object: 引入参数对象</span></p>
-        <p>description: 某些参数总是很自然地同时出现,以一个对象取代这些参数</p>
+<p>&nbsp;</p>
+<p><span>Introduce Parameter Object: 引入参数对象</span></p>
+<p>description: 某些参数总是很自然地同时出现,以一个对象取代这些参数</p>
 
 <pre>
 class Account
@@ -787,13 +749,13 @@ account.add_charge(Charge.new(12.0, 0.125, true).total)
 total = account.total_charge
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Hide Method: 隐藏某个函数</span></p>
-        <p>description: 有一个函数，从来没有被其他任何class用到,可以将这个函数修改为private</p>
+<p>&nbsp;</p>
+<p><span>Hide Method: 隐藏某个函数</span></p>
+<p>description: 有一个函数，从来没有被其他任何class用到,可以将这个函数修改为private</p>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Constructor with Factory Method: 以工厂函数取代构造函数</span></p>
-        <p>description: 希望在创建对象时不仅仅是对它做简单的构建动作,可以将constructor替换为factory method</p>
+<p>&nbsp;</p>
+<p><span>Replace Constructor with Factory Method: 以工厂函数取代构造函数</span></p>
+<p>description: 希望在创建对象时不仅仅是对它做简单的构建动作,可以将constructor替换为factory method</p>
 
 <pre>
 class ProductController
@@ -849,12 +811,6 @@ class Product
 end
 </pre>
 
-        <p>&nbsp;</p>
-        <p><span>Replace Error Code with Exception: 用异常取代错误码</span></p>
-        <p>description: 希望在创建对象时不仅仅是对它做简单的构建动作,可以将constructor替换为factory method</p>
-
-        {% include disqus.html %}
-      </div>
-    </div>
-  </div>
-</div>
+<p>&nbsp;</p>
+<p><span>Replace Error Code with Exception: 用异常取代错误码</span></p>
+<p>description: 希望在创建对象时不仅仅是对它做简单的构建动作,可以将constructor替换为factory method</p>
