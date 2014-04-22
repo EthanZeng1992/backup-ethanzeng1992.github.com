@@ -233,3 +233,52 @@ ul {
   padding-bottom: 3px;
   padding-top: 15px;
 }
+
+.pager {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: center;
+}
+
+.pager .previous > a {
+  float: left;
+}
+
+.pager li > a {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  color: #428bca;
+  text-decoration: none;
+}
+
+.pager .disabled > a,
+.pager .disabled > a:hover {
+  color: #999;
+  background-color: #fff;
+  cursor: not-allowed;
+}
+
+.pager li > a {
+  text-decoration: none;
+}
+
+.pager li > a:hover {
+  text-decoration: none;
+  background-color: #eee;
+}
+
+.pager .next > a {
+  float: right; 
+}
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+  color: #666;
+}
