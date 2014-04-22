@@ -36,7 +36,25 @@ h3 {
   margin-top: 30px;
   padding: 15px 0;
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+}
+
+#comment {
+  border-top: 1px solid #ddd;
+}
+
+.notice {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+.notice-text {
+  padding-left: 30px;  
 }
 
 /* code heighlight*/
