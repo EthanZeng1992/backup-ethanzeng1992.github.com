@@ -57,6 +57,14 @@ h3 {
   padding-left: 30px;  
 }
 
+.previous-article {
+  float: right;
+}
+
+.next-article {
+  float: left;
+}
+
 /* code heighlight*/
 .prettyprint,
 pre.prettyprint {

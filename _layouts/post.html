@@ -105,6 +105,23 @@
             </div>
           </div>
         </div>
+
+        <div class="next-article">
+          {% if page.next.url %} 
+            <a href="{{page.next.url}}">
+              &larr; {{page.next.title}}
+            </a> 
+          {% endif %} 
+        </div>
+
+        <div class="previous-article">
+          {% if page.previous.url %} 
+            <a href="{{page.previous.url}}">
+              {{page.previous.title}} &rarr;
+            </a> 
+          {% endif %} 
+        </div>
+
         <footer class="footer">
           Copyright &copy; 2014 Ethan Design credit: 
           <a href="https://github.com/EthanZeng1992/ethanzeng1992.github.com">ethanzeng1992</a>
