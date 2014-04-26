@@ -6,7 +6,7 @@ tags: rails
 description: Setting up polymorphic many-to-many associations in Rails is more difficult, but only slightly.
 ---
 <h3>understand :source option of has_one/has_many through</h3>
-<p> Sometimes, you want to use different names for different associations. If the name you want to use for an association on the model is not the same as the assocation on the :through model, you can use :source to specify it.</p>
+<p> Sometimes, you want to use different names for different associations. If the name you want to use for an association on the model is not the same as the association on the :through model, you can use :source to specify it.</p>
 <p>&nbsp;</p>
 <b>Here is an example</b>
 <p>Assume we have three models: Pet, Dog and Dog::Breed</p>
